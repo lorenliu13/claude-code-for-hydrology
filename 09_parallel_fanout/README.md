@@ -48,6 +48,34 @@ The SPI is the most widely used drought index in hydrology. It transforms a prec
 
 ---
 
+## Before you start: pre-approve tools
+
+Background subagents cannot pause and ask you for permission — they run headlessly. If a tool isn't pre-approved, the subagent stalls waiting for a prompt that never comes.
+
+Run this **once** before the exercise (or paste it into Claude Code):
+
+```
+/update-config
+Add to project .claude/settings.json:
+  Bash(python *)
+  Bash(python3 *)
+  PowerShell(python *)
+  PowerShell(python3 *)
+```
+
+This is already done for you in this repo's [.claude/settings.json](../.claude/settings.json). Check that these entries exist before running the parallel fan-out prompt:
+
+```json
+"Bash(python *)",
+"Bash(python3 *)",
+"PowerShell(python *)",
+"PowerShell(python3 *)"
+```
+
+**Why this matters for parallel agents specifically:** In the sequential write→review pattern (Exercise 6), each subagent runs in your foreground session — a permission prompt pauses it and you can approve. In the parallel fan-out, all four subagents run simultaneously. One stalled subagent blocks the reporter from ever starting. Pre-approving Python execution removes that failure mode entirely.
+
+---
+
 ## What you have
 
 - `spi_analysis.py` — stub function `compute_spi(precipitation, timescale) -> list[float]`
