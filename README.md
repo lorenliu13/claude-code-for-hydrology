@@ -44,7 +44,7 @@ The exercises are ordered from highest-leverage fundamentals to more advanced wo
 
 **Foundations (Exercises 1–4)** cover the core prompting practices that improve every interaction with Claude Code. These are the skills you will use in every session.
 
-**Workflows (Exercises 5–8)** introduce tools and patterns that automate, extend, and scale what you can do — once the foundations are solid.
+**Workflows (Exercises 5–9)** introduce tools and patterns that automate, extend, and scale what you can do — once the foundations are solid.
 
 | # | Folder | Best Practice | Level |
 |---|--------|--------------|-------|
@@ -56,6 +56,7 @@ The exercises are ordered from highest-leverage fundamentals to more advanced wo
 | 6 | [`06_subagent_review/`](06_subagent_review/) | Orchestrate coder and reviewer subagents in sequence | Advanced |
 | 7 | [`07_aws_cli_workflow/`](07_aws_cli_workflow/) | Use AWS CLI with Claude to download public hydrological datasets | Intermediate |
 | 8 | [`08_mcp_usgs_gauge/`](08_mcp_usgs_gauge/) | Use MCP fetch server to query the USGS NWIS API | Intermediate |
+| 9 | [`09_parallel_fanout/`](09_parallel_fanout/) | Spawn subagents in parallel for multi-configuration analysis; aggregate with a reporter subagent | Advanced |
 
 ---
 
@@ -119,6 +120,9 @@ Metrics covered: Nash-Sutcliffe Efficiency (NSE) and Kling-Gupta Efficiency (KGE
 
 ### Exercise 8 — MCP USGS Gauge
 **Concept:** Use the MCP fetch server to query the USGS NWIS API in real time, then implement correct response parsing in Python. Demonstrates how MCP tools extend Claude's reach to live external data.
+
+### Exercise 9 — Parallel Fan-Out with Subagents
+**Concept:** When the same analysis must run across multiple independent configurations, spawn one subagent per configuration simultaneously — then collect all results with a single reporter subagent. Wall time equals the slowest single subagent, not the sum of all. Applied here to computing SPI drought indices (SPI-1, SPI-3, SPI-6, SPI-12) in parallel and aggregating findings into a unified comparison report.
 
 ---
 
