@@ -23,6 +23,7 @@ Use `python3` on systems where `python` defaults to Python 2.
 | `06_subagent_review/` | Orchestrate coder and reviewer subagents in sequence; parent controls context isolation and loops until review passes |
 | `07_aws_cli_workflow/` | Use AWS CLI with Claude to download public hydrological datasets |
 | `08_mcp_usgs_gauge/` | Use MCP fetch server to query the USGS NWIS API and implement correct parsing code |
+| `09_parallel_fanout/` | Spawn subagents in parallel for multi-configuration analysis; aggregate with a reporter subagent |
 
 ## Workflow for Each Exercise
 
