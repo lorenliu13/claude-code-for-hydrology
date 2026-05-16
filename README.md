@@ -1,6 +1,6 @@
 <img src="cover.png" alt="Claude Code for Hydrology" width="100%"/>
 
-# Claude Code for Hydrology — Hands-On Tutorials
+# Claude Code for Hydrology
 
 A collection of self-contained exercises for learning [Claude Code](https://claude.ai/code) best practices, built specifically for the **hydrological research community**. All code examples use real hydrology concepts — streamflow analysis, drought indices, model performance metrics, and USGS gauge data.
 
