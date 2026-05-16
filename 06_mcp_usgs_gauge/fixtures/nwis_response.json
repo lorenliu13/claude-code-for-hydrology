@@ -1,0 +1,112 @@
+{
+  "value": {
+    "queryInfo": {
+      "queryURL": "https://waterservices.usgs.gov/nwis/iv/?sites=06610000&parameterCd=00060&startDT=2023-06-01&endDT=2023-06-01&format=json",
+      "criteria": {
+        "locationParam": "[ALL:06610000]",
+        "variableParam": "[00060]"
+      },
+      "note": [
+        {"value": "2023-06-01", "title": "filter:timeRange"},
+        {"value": "00060", "title": "filter:sites"}
+      ]
+    },
+    "timeSeries": [
+      {
+        "sourceInfo": {
+          "siteName": "Missouri River at Omaha, NE",
+          "siteCode": [
+            {
+              "value": "06610000",
+              "network": "NWIS",
+              "agencyCode": "USGS"
+            }
+          ],
+          "timeZoneInfo": {
+            "defaultTimeZone": {"zoneOffset": "-06:00", "zoneAbbreviation": "CST"},
+            "daylightSavingTimeZone": {"zoneOffset": "-05:00", "zoneAbbreviation": "CDT"},
+            "siteUsesDaylightSavingTime": true
+          },
+          "geoLocation": {
+            "geogLocation": {
+              "srs": "EPSG:4326",
+              "latitude": 41.2627778,
+              "longitude": -95.9330556
+            }
+          },
+          "note": [],
+          "siteType": [],
+          "siteProperty": []
+        },
+        "variable": {
+          "variableCode": [
+            {
+              "value": "00060",
+              "network": "NWIS",
+              "vocabulary": "NWIS:UnitValues",
+              "variableID": 45807197,
+              "default": true
+            }
+          ],
+          "variableName": "Streamflow, ft&#179;/s",
+          "variableDescription": "Discharge, cubic feet per second",
+          "valueType": "Derived Value",
+          "unit": {"unitCode": "ft3/s"},
+          "options": {"option": [{"name": "Statistic", "optionCode": "00000"}]},
+          "note": [],
+          "noDataValue": -999999.0,
+          "variableProperty": [],
+          "oid": "45807197"
+        },
+        "values": [
+          {
+            "value": [
+              {
+                "value": "12400",
+                "qualifiers": ["P"],
+                "dateTime": "2023-06-01T00:00:00.000-05:00"
+              },
+              {
+                "value": "12300",
+                "qualifiers": ["P"],
+                "dateTime": "2023-06-01T01:00:00.000-05:00"
+              },
+              {
+                "value": "12200",
+                "qualifiers": ["P"],
+                "dateTime": "2023-06-01T02:00:00.000-05:00"
+              },
+              {
+                "value": "12100",
+                "qualifiers": ["P"],
+                "dateTime": "2023-06-01T03:00:00.000-05:00"
+              },
+              {
+                "value": "12000",
+                "qualifiers": ["P"],
+                "dateTime": "2023-06-01T04:00:00.000-05:00"
+              }
+            ],
+            "qualifier": [
+              {
+                "qualifierCode": "P",
+                "qualifierDescription": "Provisional data subject to revision.",
+                "qualifierID": 0,
+                "network": "NWIS",
+                "vocabulary": "uv_rmk_cd"
+              }
+            ],
+            "qualityControlLevel": [],
+            "method": [{"methodDescription": "", "methodID": 158459}],
+            "source": [],
+            "offset": [],
+            "sample": [],
+            "censorCode": []
+          }
+        ],
+        "name": "USGS:06610000:00060:00000"
+      }
+    ]
+  },
+  "name": "ns1:timeSeriesResponseType"
+}

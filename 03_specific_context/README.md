@@ -25,6 +25,8 @@ The code has a bug: the mean and standard deviation are swapped in the formula.
 
 ### Part A — Vague prompt (the frustrating way)
 
+**Before starting:** Copy `drought_index.py` into a separate backup folder (e.g. `_originals/`) so you can restore it before Part B.
+
 Open Claude Code and run:
 
 ```
@@ -34,6 +36,8 @@ fix the SPI calculation bug in drought_index.py
 Observe: Claude has to guess what the bug is. It might explore the file, make changes, or ask clarifying questions. It may fix it, or it may fix the wrong thing.
 
 ### Part B — Specific prompt (the effective way)
+
+**Before starting:** Replace `drought_index.py` with your backup copy from `_originals/` to restore the original buggy file.
 
 Clear context with `/clear`, then try:
 

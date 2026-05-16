@@ -32,6 +32,8 @@ where r = Pearson correlation, alpha = std(sim)/std(obs), beta = mean(sim)/mean(
 
 ### Part A — Without verification (the risky way)
 
+**Before starting:** Copy `performance_metrics.py` into a separate backup folder (e.g. `_originals/`) so you can restore it before Part B.
+
 Open Claude Code and run this prompt:
 
 ```
@@ -41,6 +43,8 @@ implement the compute_nse and compute_kge functions in performance_metrics.py
 Claude will write something. But will it handle all edge cases? You'd have to check manually.
 
 ### Part B — With verification (the reliable way)
+
+**Before starting:** Replace `performance_metrics.py` with your backup copy from `_originals/` to restore the original stubs.
 
 Clear context with `/clear`, then try:
 
