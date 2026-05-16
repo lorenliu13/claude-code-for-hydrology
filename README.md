@@ -42,14 +42,14 @@ Then pick an exercise below and follow its `README.md`.
 
 | # | Folder | Best Practice | Skill Level |
 |---|--------|--------------|-------------|
-| 1 | [`01_verify_your_work/`](01_verify_your_work/) | Give Claude tests so it can verify its own output | Beginner |
-| 2 | [`02_explore_plan_code/`](02_explore_plan_code/) | Explore → Plan → Code with plan mode | Beginner |
-| 3 | [`03_specific_context/`](03_specific_context/) | Reference specific files and symptoms in prompts | Beginner |
+| 1 | [`01_explore_plan_code/`](01_explore_plan_code/) | Explore → Plan → Code with plan mode | Beginner |
+| 2 | [`02_specific_context/`](02_specific_context/) | Reference specific files and symptoms in prompts | Beginner |
+| 3 | [`03_verify_your_work/`](03_verify_your_work/) | Give Claude tests so it can verify its own output | Beginner |
 | 4 | [`04_init_claude_md/`](04_init_claude_md/) | Use `/init` to create CLAUDE.md for persistent project context | Beginner |
-| 5 | [`05_aws_cli_workflow/`](05_aws_cli_workflow/) | Use AWS CLI with Claude to download public hydrological datasets | Intermediate |
-| 6 | [`06_mcp_usgs_gauge/`](06_mcp_usgs_gauge/) | Use MCP fetch server to query the USGS NWIS API | Intermediate |
-| 7 | [`07_skills/`](07_skills/) | Create custom skills for domain knowledge and repeatable workflows | Intermediate |
-| 8 | [`08_subagent_review/`](08_subagent_review/) | Orchestrate coder and reviewer subagents in sequence | Advanced |
+| 5 | [`05_skills/`](05_skills/) | Create custom skills for domain knowledge and repeatable workflows | Intermediate |
+| 6 | [`06_subagent_review/`](06_subagent_review/) | Orchestrate coder and reviewer subagents in sequence | Advanced |
+| 7 | [`07_aws_cli_workflow/`](07_aws_cli_workflow/) | Use AWS CLI with Claude to download public hydrological datasets | Intermediate |
+| 8 | [`08_mcp_usgs_gauge/`](08_mcp_usgs_gauge/) | Use MCP fetch server to query the USGS NWIS API | Intermediate |
 
 ---
 
@@ -69,7 +69,7 @@ The difference between the two prompts is the lesson.
 Each exercise folder contains a `test_*.py` file. To run tests for an exercise:
 
 ```bash
-python -m pytest 01_verify_your_work/ -v
+python -m pytest 01_explore_plan_code/ -v
 ```
 
 Or run all exercises at once:
@@ -97,14 +97,14 @@ claude-code-for-hydrology/
 │   ├── skills/flow-report/          # Streamflow QC report skill
 │   └── agents/code-reviewer.md     # Example subagent definition
 │
-├── 01_verify_your_work/             # NSE / KGE metrics with tests
-├── 02_explore_plan_code/            # Exceedance flow analysis
-├── 03_specific_context/             # SPI bug fix with specific context
+├── 01_explore_plan_code/            # Exceedance flow analysis
+├── 02_specific_context/             # SPI bug fix with specific context
+├── 03_verify_your_work/             # NSE / KGE metrics with tests
 ├── 04_init_claude_md/               # Generating CLAUDE.md with /init
-├── 05_aws_cli_workflow/             # AWS CLI + USGS/NOAA public datasets
-├── 06_mcp_usgs_gauge/               # MCP fetch server + USGS NWIS API
-├── 07_skills/                       # Custom hydrology skills
-└── 08_subagent_review/              # Multi-agent coder + reviewer loop
+├── 05_skills/                       # Custom hydrology skills
+├── 06_subagent_review/              # Multi-agent coder + reviewer loop
+├── 07_aws_cli_workflow/             # AWS CLI + USGS/NOAA public datasets
+└── 08_mcp_usgs_gauge/               # MCP fetch server + USGS NWIS API
 ```
 
 ### `.claude/` folder

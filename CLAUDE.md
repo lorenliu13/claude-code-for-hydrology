@@ -15,14 +15,14 @@ Use `python3` on systems where `python` defaults to Python 2.
 
 | Folder | Best Practice |
 |--------|--------------|
-| `01_verify_your_work/` | Give Claude tests so it can verify its own output |
-| `02_explore_plan_code/` | Explore → Plan → Code with plan mode |
-| `03_specific_context/` | Reference specific files and symptoms in prompts |
+| `01_explore_plan_code/` | Explore → Plan → Code with plan mode |
+| `02_specific_context/` | Reference specific files and symptoms in prompts |
+| `03_verify_your_work/` | Give Claude tests so it can verify its own output |
 | `04_init_claude_md/` | Use `/init` to create CLAUDE.md for persistent project context |
-| `05_aws_cli_workflow/` | Use AWS CLI with Claude to download public hydrological datasets |
-| `06_mcp_usgs_gauge/` | Use MCP fetch server to query the USGS NWIS API and implement correct parsing code |
-| `07_skills/` | Create and use skills for domain knowledge (`/hydro-context`) and repeatable workflows (`/flow-report`) |
-| `08_subagent_review/` | Orchestrate coder and reviewer subagents in sequence; parent controls context isolation and loops until review passes |
+| `05_skills/` | Create and use skills for domain knowledge (`/hydro-context`) and repeatable workflows (`/flow-report`) |
+| `06_subagent_review/` | Orchestrate coder and reviewer subagents in sequence; parent controls context isolation and loops until review passes |
+| `07_aws_cli_workflow/` | Use AWS CLI with Claude to download public hydrological datasets |
+| `08_mcp_usgs_gauge/` | Use MCP fetch server to query the USGS NWIS API and implement correct parsing code |
 
 ## Workflow for Each Exercise
 
