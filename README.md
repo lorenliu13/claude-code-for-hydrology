@@ -40,8 +40,14 @@ Then pick an exercise below and follow its `README.md`.
 
 ## Exercises
 
-| # | Folder | Best Practice | Skill Level |
-|---|--------|--------------|-------------|
+The exercises are ordered from highest-leverage fundamentals to more advanced workflows. Start at the beginning — each exercise builds on the habits established by the previous ones.
+
+**Foundations (Exercises 1–4)** cover the core prompting practices that improve every interaction with Claude Code. These are the skills you will use in every session.
+
+**Workflows (Exercises 5–8)** introduce tools and patterns that automate, extend, and scale what you can do — once the foundations are solid.
+
+| # | Folder | Best Practice | Level |
+|---|--------|--------------|-------|
 | 1 | [`01_explore_plan_code/`](01_explore_plan_code/) | Explore → Plan → Code with plan mode | Beginner |
 | 2 | [`02_specific_context/`](02_specific_context/) | Reference specific files and symptoms in prompts | Beginner |
 | 3 | [`03_verify_your_work/`](03_verify_your_work/) | Give Claude tests so it can verify its own output | Beginner |
@@ -82,73 +88,37 @@ python -m pytest -v
 
 ---
 
-## Project Structure
-
-```
-claude-code-for-hydrology/
-├── README.md                        # This file
-├── requirements.txt                 # Python dependencies
-├── CLAUDE.md                        # Claude Code project instructions
-│
-├── .claude/
-│   ├── settings.json                # Claude Code project permissions
-│   ├── skills/run-tests/SKILL.md    # Custom /run-tests slash command
-│   ├── skills/hydro-context/        # Hydrology domain knowledge skill
-│   ├── skills/flow-report/          # Streamflow QC report skill
-│   └── agents/code-reviewer.md     # Example subagent definition
-│
-├── 01_explore_plan_code/            # Exceedance flow analysis
-├── 02_specific_context/             # SPI bug fix with specific context
-├── 03_verify_your_work/             # NSE / KGE metrics with tests
-├── 04_init_claude_md/               # Generating CLAUDE.md with /init
-├── 05_skills/                       # Custom hydrology skills
-├── 06_subagent_review/              # Multi-agent coder + reviewer loop
-├── 07_aws_cli_workflow/             # AWS CLI + USGS/NOAA public datasets
-└── 08_mcp_usgs_gauge/               # MCP fetch server + USGS NWIS API
-```
-
-### `.claude/` folder
-
-The `.claude/` folder is part of the learning material — examine it alongside the exercises:
-
-- **`skills/run-tests/SKILL.md`** — a custom `/run-tests` slash command that runs pytest and returns a formatted summary.
-- **`skills/hydro-context/`** — the `/hydro-context` skill that injects US hydrology domain knowledge (units, formulas, conventions) into Claude's context.
-- **`skills/flow-report/`** — the `/flow-report` skill that runs a standardized 5-step QC report on a streamflow dataset.
-- **`agents/code-reviewer.md`** — an example subagent that reviews Python code with restricted tools and focused instructions.
-
----
-
 ## Exercise Details
 
-### Exercise 1 — Verify Your Work
-**Concept:** The single highest-leverage thing you can do is give Claude tests with known expected values. Claude becomes its own quality checker.
-
-Metrics covered: Nash-Sutcliffe Efficiency (NSE) and Kling-Gupta Efficiency (KGE).
-
-### Exercise 2 — Explore → Plan → Code
-**Concept:** Use plan mode (`Shift+Tab` twice) to separate exploration from implementation. Claude reads existing code before making changes.
+### Exercise 1 — Explore → Plan → Code
+**Concept:** Use plan mode (`Shift+Tab` twice) to separate exploration from implementation. Claude reads existing code before making changes, preventing it from overwriting things it hasn't seen.
 
 Feature to add: `compute_exceedance_flows()` returning Q90 and Q95 flow thresholds.
 
-### Exercise 3 — Specific Context
-**Concept:** Vague prompts make Claude guess. Naming the file, function, failing test, and symptom lets Claude go directly to the root cause.
+### Exercise 2 — Specific Context
+**Concept:** Vague prompts make Claude guess. Naming the file, function, failing test, and symptom lets Claude go directly to the root cause instead of exploring blind.
 
 Bug to fix: swapped mean/std in the Standardized Precipitation Index (SPI) formula.
 
+### Exercise 3 — Verify Your Work
+**Concept:** The single highest-leverage habit is giving Claude tests with known expected values. Claude becomes its own quality checker and can iterate without your involvement.
+
+Metrics covered: Nash-Sutcliffe Efficiency (NSE) and Kling-Gupta Efficiency (KGE).
+
 ### Exercise 4 — Initialize CLAUDE.md
-**Concept:** Use `/init` to generate a `CLAUDE.md` that gives Claude persistent project context across sessions.
+**Concept:** Use `/init` to generate a `CLAUDE.md` that gives Claude persistent project context across sessions — so you stop re-explaining your codebase every time you open a new conversation.
 
-### Exercise 5 — AWS CLI Workflow
-**Concept:** Combine Claude with the AWS CLI to discover and download public hydrological datasets (USGS, NOAA, etc.) without leaving the terminal.
+### Exercise 5 — Skills
+**Concept:** Create reusable skills for domain knowledge (`/hydro-context`) and repeatable workflows (`/flow-report`) so you don't re-explain hydrology conventions every session. Skills compose with everything else in this repo.
 
-### Exercise 6 — MCP USGS Gauge
-**Concept:** Use the MCP fetch server to query the USGS NWIS API in real time, then implement correct response parsing in Python.
+### Exercise 6 — Subagent Review
+**Concept:** Orchestrate a coder subagent and a reviewer subagent in sequence. The parent agent controls context isolation and loops until the review passes — offloading an entire quality gate to Claude.
 
-### Exercise 7 — Skills
-**Concept:** Create reusable skills for domain knowledge (`/hydro-context`) and repeatable workflows (`/flow-report`) so you don't re-explain hydrology conventions every session.
+### Exercise 7 — AWS CLI Workflow
+**Concept:** Combine Claude with the AWS CLI to discover and download public hydrological datasets (USGS, NOAA, etc.) without leaving the terminal. Claude handles flag lookup and command construction; you supply the science intent.
 
-### Exercise 8 — Subagent Review
-**Concept:** Orchestrate a coder subagent and a reviewer subagent in sequence. The parent agent controls context isolation and loops until the review passes.
+### Exercise 8 — MCP USGS Gauge
+**Concept:** Use the MCP fetch server to query the USGS NWIS API in real time, then implement correct response parsing in Python. Demonstrates how MCP tools extend Claude's reach to live external data.
 
 ---
 
