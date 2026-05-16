@@ -1,4 +1,4 @@
-# Exercise 6: Use MCP Servers to Download USGS Gauge Data
+# Exercise 8: Use MCP Servers to Download USGS Gauge Data
 
 **Best practice:** Give Claude an MCP server with web access so it can query a live API, read the real response schema, and write correct parsing code — instead of writing code to call APIs it has never seen.
 
@@ -78,8 +78,8 @@ Verify it is active with `/mcp` in Claude Code — you should see `fetch` listed
 Open Claude Code (no MCP server configured) and run:
 
 ```
-implement the four stub functions in usgs_gauge.py for site 06610000
-then run python -m pytest test_usgs_gauge.py -v
+implement the four stub functions in 08_mcp_usgs_gauge/usgs_gauge.py for site 06610000
+then run python -m pytest 08_mcp_usgs_gauge/test_usgs_gauge.py -v
 ```
 
 Observe: Claude writes `urllib` or `requests` code using guessed URL parameters and a reconstructed JSON schema. The `parse_nwis_response` function will likely get the nesting wrong (`timeSeries`, `values`, `value` is three levels deep), and the no-data sentinel check may be missing or use the wrong value. Tests will fail, and fixing them requires Claude to guess further.
@@ -98,8 +98,8 @@ Before writing any code:
 
 2. Note the exact nesting path to the discharge values and the noDataValue field.
 
-Then implement all four stubs in usgs_gauge.py. After implementing, run:
-   python -m pytest test_usgs_gauge.py -v
+Then implement all four stubs in 08_mcp_usgs_gauge/usgs_gauge.py. After implementing, run:
+   python -m pytest 08_mcp_usgs_gauge/test_usgs_gauge.py -v
 All 12 tests must pass. Fix any failures before stopping.
 ```
 
@@ -127,5 +127,5 @@ Observe: Claude fetches the live API, reads the actual JSON structure, then writ
 All 12 tests should FAIL (stubs are not implemented — that is intentional):
 
 ```powershell
-python -m pytest test_usgs_gauge.py -v
+python -m pytest 08_mcp_usgs_gauge/test_usgs_gauge.py -v
 ```

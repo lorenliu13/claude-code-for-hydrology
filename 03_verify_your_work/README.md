@@ -1,4 +1,4 @@
-# Exercise 1: Give Claude a Way to Verify Its Work
+# Exercise 3: Give Claude a Way to Verify Its Work
 
 **Best practice:** Include tests with known expected values so Claude can check itself and iterate until correct. This is the single highest-leverage thing you can do.
 
@@ -37,7 +37,7 @@ where r = Pearson correlation, alpha = std(sim)/std(obs), beta = mean(sim)/mean(
 Open Claude Code and run this prompt:
 
 ```
-implement the compute_nse and compute_kge functions in performance_metrics.py
+implement the compute_nse and compute_kge functions in 03_verify_your_work/performance_metrics.py
 ```
 
 Claude will write something. But will it handle all edge cases? You'd have to check manually.
@@ -49,9 +49,9 @@ Claude will write something. But will it handle all edge cases? You'd have to ch
 Clear context with `/clear`, then try:
 
 ```
-implement compute_nse and compute_kge in performance_metrics.py.
+implement compute_nse and compute_kge in 03_verify_your_work/performance_metrics.py.
 after implementing, run:
-  python -m pytest test_performance_metrics.py -v
+  python -m pytest 03_verify_your_work/test_performance_metrics.py -v
 all 8 tests must pass. fix any failures before stopping.
 ```
 
@@ -73,5 +73,5 @@ Claude will now run tests after implementing, see any failures, and fix them bef
 Run this to confirm the stubs are not yet implemented (all 8 should FAIL — that's correct):
 
 ```powershell
-python -m pytest test_performance_metrics.py -v
+python -m pytest 03_verify_your_work/test_performance_metrics.py -v
 ```

@@ -1,4 +1,4 @@
-# Exercise 5: Use AWS CLI with Claude to Download Hydrological Data
+# Exercise 7: Use AWS CLI with Claude to Download Hydrological Data
 
 **Best practice:** Point Claude at an authenticated CLI tool and let it learn the tool itself — don't write API wrappers from scratch.
 

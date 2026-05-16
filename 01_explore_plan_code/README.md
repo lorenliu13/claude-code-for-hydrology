@@ -1,4 +1,4 @@
-# Exercise 2: Explore First, Then Plan, Then Code
+# Exercise 1: Explore First, Then Plan, Then Code
 
 **Best practice:** Use plan mode to separate exploration from implementation. This prevents Claude from solving the wrong problem or making changes without understanding the existing code.
 
@@ -30,9 +30,9 @@ In Claude Code, press `Shift+Tab` twice (or use the menu) to enter plan mode. In
 In plan mode, prompt:
 
 ```
-read flow_analysis.py and understand how it's structured.
-look at sample_flow.csv to understand the data format.
-also read the existing tests in test_flow_analysis.py.
+read 01_explore_plan_code/flow_analysis.py and understand how it's structured.
+look at 01_explore_plan_code/sample_flow.csv to understand the data format.
+also read the existing tests in 01_explore_plan_code/test_flow_analysis.py.
 ```
 
 ### Step 3 — Plan
@@ -40,8 +40,8 @@ also read the existing tests in test_flow_analysis.py.
 Still in plan mode, prompt:
 
 ```
-I want to add a function compute_exceedance_flows(df) that returns Q90 and Q95
-(the discharge values exceeded 90% and 95% of the time respectively).
+I want to add a function compute_exceedance_flows(df) to 01_explore_plan_code/flow_analysis.py
+that returns Q90 and Q95 (the discharge values exceeded 90% and 95% of the time respectively).
 Q90 means only 10% of days have flows below this value.
 What exactly needs to change? Create a step-by-step plan.
 ```
@@ -53,9 +53,9 @@ Review Claude's plan. Press `Ctrl+G` to open it in your text editor and add any 
 Exit plan mode (press `Shift+Tab` once), then:
 
 ```
-implement compute_exceedance_flows from the plan.
-add 2 pytest tests for it.
-run the tests after implementing and fix any failures.
+implement compute_exceedance_flows from the plan in 01_explore_plan_code/flow_analysis.py.
+add 2 pytest tests for it in 01_explore_plan_code/test_flow_analysis.py.
+run python -m pytest 01_explore_plan_code/test_flow_analysis.py -v after implementing and fix any failures.
 ```
 
 ### Step 5 — Commit

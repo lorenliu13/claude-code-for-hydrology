@@ -1,4 +1,4 @@
-# Exercise 7: Create and Use Skills
+# Exercise 5: Create and Use Skills
 
 **Best practice:** Package domain knowledge and repeatable workflows as skills so Claude applies them consistently — without you re-explaining them every session.
 
@@ -49,8 +49,8 @@ Run this prompt:
 
 ```
 /hydro-context
-implement the four functions in flood_frequency.py.
-run python -m pytest test_flood_frequency.py -v and fix any failures.
+implement the four functions in 05_skills/flood_frequency.py.
+run python -m pytest 05_skills/test_flood_frequency.py -v and fix any failures.
 ```
 
 The `/hydro-context` skill gives Claude the water-year definition, Weibull formula, and -999999 sentinel convention **without you having to spell them out**. Claude should implement correctly on the first or second attempt.
@@ -125,5 +125,5 @@ Skills live at:
 All 16 tests should FAIL (stubs not implemented — that is correct):
 
 ```powershell
-python -m pytest test_flood_frequency.py -v
+python -m pytest 05_skills/test_flood_frequency.py -v
 ```

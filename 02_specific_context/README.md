@@ -1,4 +1,4 @@
-# Exercise 3: Provide Specific Context in Your Prompts
+# Exercise 2: Provide Specific Context in Your Prompts
 
 **Best practice:** Reference specific files, name the symptom, and point to the failing test. Vague prompts make Claude guess — specific prompts let Claude find the root cause.
 
@@ -30,7 +30,7 @@ The code has a bug: the mean and standard deviation are swapped in the formula.
 Open Claude Code and run:
 
 ```
-fix the SPI calculation bug in drought_index.py
+fix the SPI calculation bug in 02_specific_context/drought_index.py
 ```
 
 Observe: Claude has to guess what the bug is. It might explore the file, make changes, or ask clarifying questions. It may fix it, or it may fix the wrong thing.
@@ -43,8 +43,8 @@ Clear context with `/clear`, then try:
 
 ```
 users report that SPI values don't look right — even months with normal rainfall show large anomalies.
-the bug is in drought_index.py in the compute_spi function.
-test_drought_index.py::test_spi_of_mean_is_zero is failing — run it to see the error.
+the bug is in 02_specific_context/drought_index.py in the compute_spi function.
+02_specific_context/test_drought_index.py::test_spi_of_mean_is_zero is failing — run it to see the error.
 fix the root cause of the wrong formula, not a workaround.
 run the test after fixing to confirm it passes.
 ```
@@ -77,5 +77,5 @@ Observe: Claude goes directly to the right function, runs the test to understand
 Run this — one test should FAIL (the bug is present, which is intentional):
 
 ```powershell
-python -m pytest test_drought_index.py -v
+python -m pytest 02_specific_context/test_drought_index.py -v
 ```

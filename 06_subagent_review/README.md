@@ -1,4 +1,4 @@
-# Exercise 8: Write-then-Review with Subagents
+# Exercise 6: Write-then-Review with Subagents
 
 **Best practice:** Ask Claude Code to orchestrate two isolated subagents — one writes the code, another reviews it independently.
 
@@ -35,7 +35,7 @@ You get code — but Claude wrote and "reviewed" it in the same context. It anch
 Save the output to `lp3_frequency.py` and run the tests:
 
 ```bash
-python -m pytest 08_subagent_review/test_lp3_frequency.py -v
+python -m pytest 06_subagent_review/test_lp3_frequency.py -v
 ```
 
 Note which tests fail, then clear context and try the subagent approach.
@@ -59,13 +59,13 @@ Use two subagents in sequence:
    negative flows, records shorter than 10 observations), and code quality.
 
 Show me the reviewer's feedback, then write the final code to
-08_subagent_review/lp3_frequency.py.
+06_subagent_review/lp3_frequency.py.
 ```
 
 Then validate:
 
 ```bash
-python -m pytest 08_subagent_review/test_lp3_frequency.py -v
+python -m pytest 06_subagent_review/test_lp3_frequency.py -v
 ```
 
 ---
