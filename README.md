@@ -18,7 +18,7 @@ Each exercise demonstrates a **"before vs. after" prompt pattern** — you try a
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/your-username/claude-code-tutorials.git
+git clone https://github.com/lorenliu13/claude-code-tutorials.git
 cd claude-code-tutorials
 
 # 2. Install Python dependencies
